@@ -13,8 +13,7 @@ if(age > keschaAge){
     System.Console.WriteLine("You are older!");
 } else if(age == keschaAge){
     System.Console.WriteLine("You are equal!");
-}
-else{
+}else{
     System.Console.WriteLine("You are younger!");
 }
 // System.Console.WriteLine("You are older than KASCHA " + (age > keschaAge));
