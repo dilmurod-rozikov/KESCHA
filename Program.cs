@@ -2,6 +2,13 @@
 System.Console.WriteLine("Please, Enter your name:");
 string name = Console.ReadLine();
 System.Console.WriteLine($"Hello, {name}!");
+
+string password = "";
+do{
+    System.Console.WriteLine("Enter password in order to chat with me.");
+    password = Console.ReadLine();
+}while(password != "DimaBilan");
+
 System.Console.WriteLine("Please, Enter your age:");
 int age = Convert.ToInt32(Console.ReadLine());
 System.Console.WriteLine($"{age} is nice age!");
@@ -17,7 +24,7 @@ System.Console.WriteLine("Age diffenece is " + (age - keschaAge));
 message = age >= keschaAge 
         ? "You are older than or equal to KESCHA"
         : "You are younger than KESCHA";
-System.Console.WriteLine(message)
+System.Console.WriteLine(message);
 
 if(age - keschaAge >= 0 || age <= 0){
     System.Console.WriteLine("Your age is less than KESCHA's age but positive.");
