@@ -1,38 +1,32 @@
 ﻿//KESCHA Project
-System.Console.WriteLine("Please, Enter your name:");
-string name = Console.ReadLine();
-System.Console.WriteLine($"Hello, {name}!");
+using KESCHA.classes;
 
+
+Console.WriteLine("Please, Enter your name:");
+string name = Console.ReadLine();
+
+Person kescha = new Person(name);
+
+kescha.Greet(name);
 string password = "";
+
+int count = 0;
 do{
-    System.Console.WriteLine("Enter password in order to chat with me.");
+    Console.WriteLine("Enter password in order to chat with me.");
     password = Console.ReadLine();
+    count++;
+    if(count == 5)
+    {
+        System.Console.WriteLine("Sorry, you ran out of attemps..");
+        System.Console.WriteLine("Any way you may continue..");
+        break;
+    }
 }while(password != "DimaBilan");
 
-System.Console.WriteLine("Please, Enter your age:");
-int age = Convert.ToInt32(Console.ReadLine());
-System.Console.WriteLine($"{age} is nice age!");
 
-string message = age >= 0 
-        ? "age is positive!!!"
-        : "age is negative!!!";
-System.Console.WriteLine(message);
+kescha.GetAge();
 
-int keschaAge = 12;
-System.Console.WriteLine("Age diffenece is " + (age - keschaAge));
+kescha.AgeDifference();
 
-message = age >= keschaAge 
-        ? "You are older than or equal to KESCHA"
-        : "You are younger than KESCHA";
-System.Console.WriteLine(message);
-
-if(age - keschaAge >= 0 || age <= 0){
-    System.Console.WriteLine("Your age is less than KESCHA's age but positive.");
-}
-// System.Console.WriteLine("You are older than KASCHA " + (age > keschaAge));
-// System.Console.WriteLine("You are younger than KASCHA " + (age < keschaAge));
-// System.Console.WriteLine("You are older than equal to KASCHA " + (age >= keschaAge));
-// System.Console.WriteLine("You are younger than equal to KASCHA " + (age <= keschaAge));
-// System.Console.WriteLine("You are as old as KASCHA " + (age == keschaAge));
-// System.Console.WriteLine("You are not as same age as KASCHA " + (age != keschaAge));
+Console.WriteLine(kescha.GuessAge());
 
