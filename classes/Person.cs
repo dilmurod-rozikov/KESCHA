@@ -2,7 +2,7 @@ namespace KESCHA.classes
 {
     public class Person
     {
-        private string name;
+        public string name;
         private string message;
         private int age;
         private int keschaAge = 12;
@@ -14,11 +14,9 @@ namespace KESCHA.classes
         public void Greet(string name)
         {
             if(name == "")
-            {
                 name = "unknown Person..";
-            }
-            Console.WriteLine($"Hello, {name}!");
 
+            Console.WriteLine($"Hello, {name}!");
         }
         public void GetAge()
         {
@@ -46,8 +44,14 @@ namespace KESCHA.classes
         {
             System.Console.WriteLine("Lets play a game buddy. \nGuess Kescha's age: ");
             int guess = Convert.ToInt32(Console.ReadLine());
+            int count = 0;
             while(guess != keschaAge)
             {
+                if(count > 5){
+                    System.Console.WriteLine("Don't be sad, his age is " + keschaAge);
+                    break;
+                }
+                count++;
                 System.Console.WriteLine("Come on, It is simple math!!! \nGuess again: ");
                 guess = Convert.ToInt32(Console.ReadLine());
             }

@@ -1,2 +1,2 @@
 # KESCHA
-simple program
+simple program for learning c#

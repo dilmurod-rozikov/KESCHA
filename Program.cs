@@ -6,8 +6,11 @@ Console.WriteLine("Please, Enter your name:");
 string name = Console.ReadLine();
 
 Person kescha = new Person(name);
-
 kescha.Greet(name);
+
+Pet pet = new Pet(name);
+pet.MakeSound();
+
 string password = "";
 
 int count = 0;
