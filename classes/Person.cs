@@ -1,6 +1,6 @@
 namespace KESCHA.classes
 {
-    public abstract class Person
+    public abstract class Person : IAnimal
     {
         public string name;
         private string message;
