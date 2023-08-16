@@ -5,7 +5,9 @@ namespace KESCHA.classes
 {
     public class Pet :  Animal
     {
-        public Pet(string name) : base(name) { }
+        public Pet(string name) : base(name) { 
+            CreatedDate = DateTime.Now;
+        }
         public void MakeSound(){
             string type = AnimalType();
             System.Console.WriteLine($"{type} makes sound like: ");
