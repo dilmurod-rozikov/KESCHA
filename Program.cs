@@ -2,15 +2,24 @@
 using KESCHA.classes;
 
 
-Console.WriteLine("Please, Enter your name:");
-string name = Console.ReadLine();
+try
+{
+    Console.WriteLine("Please, Enter pet's name:");
+    string name = Console.ReadLine();
+    Pet pet = new Pet(name);
+    pet.MakeSound();
+    pet.Greet(name);
 
-Person kescha = new Person(name);
-kescha.Greet(name);
-
-Pet pet = new Pet(name);
-pet.MakeSound();
-
+} 
+catch(FormatException fex)
+{
+    Console.WriteLine("Format exception is found..");
+}
+catch(Exception ex)
+{
+    Console.WriteLine("Unknown exception is cought..");
+}
+Console.WriteLine("No error.....");
 string password = "";
 
 int count = 0;
@@ -20,16 +29,11 @@ do{
     count++;
     if(count == 5)
     {
-        System.Console.WriteLine("Sorry, you ran out of attemps..");
-        System.Console.WriteLine("Any way you may continue..");
+        Console.WriteLine("Sorry, you ran out of attemps..");
+        Console.WriteLine("Any way you may continue..");
         break;
     }
 }while(password != "DimaBilan");
 
 
-kescha.GetAge();
-
-kescha.AgeDifference();
-
-Console.WriteLine(kescha.GuessAge());
 

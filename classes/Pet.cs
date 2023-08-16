@@ -8,6 +8,7 @@ namespace KESCHA.classes
         public Pet(string name) : base(name) { }
         public void MakeSound(){
             string type = AnimalType();
+            System.Console.WriteLine($"{type} makes sound like: ");
             if( type == "dog" || type == "Dog")
             {
                 Console.WriteLine("wow wov voooow");
@@ -17,6 +18,11 @@ namespace KESCHA.classes
             }else{
                 Console.WriteLine("No sound..");
             }
+        }
+
+        public override void Greet(string name)
+        {
+            System.Console.WriteLine($"hello {name} insdie pet class");
         }
     }
 }
