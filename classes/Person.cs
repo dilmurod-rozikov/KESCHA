@@ -1,6 +1,6 @@
 namespace KESCHA.classes
 {
-    public class Person
+    public abstract class Person
     {
         public string name;
         private string message;
@@ -11,7 +11,7 @@ namespace KESCHA.classes
         {
             this.name = name;
         }
-        public void Greet(string name)
+        public virtual void Greet(string name)
         {
             if(name == "")
                 name = "unknown Person..";
@@ -42,22 +42,30 @@ namespace KESCHA.classes
         }
         public string GuessAge()
         {
-            System.Console.WriteLine("Lets play a game buddy. \nGuess Kescha's age: ");
-            int guess = Convert.ToInt32(Console.ReadLine());
-            int count = 0;
-            while(guess != keschaAge)
+            try
             {
-                if(count > 5){
-                    System.Console.WriteLine("Don't be sad, his age is " + keschaAge);
-                    break;
+                Console.WriteLine("Lets play a game buddy. \nGuess Kescha's age: ");
+                int guess = Convert.ToInt32(Console.ReadLine());
+                int count = 0;
+                while(guess != keschaAge)
+                {
+                    if(count > 5){
+                        Console.WriteLine("Don't be sad, his age is " + keschaAge);
+                        break;
+                    }
+                    count++;
+                    Console.WriteLine("Come on, It is simple math!!! \nGuess again: ");
+                    guess = Convert.ToInt32(Console.ReadLine());
                 }
-                count++;
-                System.Console.WriteLine("Come on, It is simple math!!! \nGuess again: ");
-                guess = Convert.ToInt32(Console.ReadLine());
+            }
+            catch(Exception ex)
+            {
+                System.Console.WriteLine("Error is handled..");
             }
 
             return "Well done bro!!!";
         }
+        public abstract void AbstractExample();
     }
 
 }
