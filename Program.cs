@@ -7,8 +7,16 @@ try
     Console.WriteLine("Please, Enter pet's name:");
     string name = Console.ReadLine();
     Pet pet = new Pet(name);
+    Console.WriteLine("Pet class created " + pet.CreatedDate);
     pet.MakeSound();
     pet.Greet(name);
+
+    Animal animal = new Animal(name);
+    System.Console.WriteLine("Animal class created. " + animal.CreatedDate);
+    animal.GetAge();
+    animal.AgeDifference();
+    Console.WriteLine(animal.GuessAge());
+
 
 } 
 catch(FormatException fex)

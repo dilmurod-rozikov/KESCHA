@@ -4,7 +4,9 @@ namespace KESCHA.classes
     public class Animal : Person
     {
         public Animal(string name) : base(name)
-        {}
+        {
+            CreatedDate = DateTimeOffset.Now;
+        }
 
         public override void AbstractExample()
         {

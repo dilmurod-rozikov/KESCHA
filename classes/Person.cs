@@ -1,15 +1,17 @@
 namespace KESCHA.classes
 {
-    public abstract class Person
+    public abstract class Person : IAnimal
     {
         public string name;
         private string message;
         private int age;
         private int keschaAge = 12;
 
+        public DateTimeOffset CreatedDate { get; set; }
         public Person(string name)
         {
             this.name = name;
+            CreatedDate = DateTimeOffset.Now;
         }
         public virtual void Greet(string name)
         {
@@ -60,7 +62,7 @@ namespace KESCHA.classes
             }
             catch(Exception ex)
             {
-                System.Console.WriteLine("Error is handled..");
+                Console.WriteLine("Error is handled..");
             }
 
             return "Well done bro!!!";
