@@ -1,5 +1,5 @@
 using System;
-
+using KESCHA.Enums;
 
 namespace KESCHA.classes
 {
@@ -21,10 +21,11 @@ namespace KESCHA.classes
                 Console.WriteLine("No sound..");
             }
         }
+        public PetTypes Type { get; set; }
 
         public override void Greet(string name)
         {
-            System.Console.WriteLine($"hello {name} insdie pet class");
+            Console.WriteLine($"hello {name} inside pet class");
         }
     }
 }
