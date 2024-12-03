@@ -10,7 +10,7 @@ namespace KESCHA.classes
 
         public override void AbstractExample()
         {
-            System.Console.WriteLine("Abstract method example..");
+            Console.WriteLine("Abstract method example..");
         }
 
         public string AnimalType(){

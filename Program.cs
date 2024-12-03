@@ -1,6 +1,6 @@
 ﻿//KESCHA Project
 using KESCHA.classes;
-
+using KESCHA.Enums;
 
 try
 {
@@ -10,6 +10,8 @@ try
     Console.WriteLine("Pet class created " + pet.CreatedDate);
     pet.MakeSound();
     pet.Greet(name);
+    pet.Type = PetTypes.Cat;
+    Console.WriteLine(pet.Type); ///(int)pet.Type
 
     Animal animal = new Animal(name);
     System.Console.WriteLine("Animal class created. " + animal.CreatedDate);
